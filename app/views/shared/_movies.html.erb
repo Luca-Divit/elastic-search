@@ -1,0 +1,8 @@
+<% if movies.any? %>
+  <% movies.each do |movie| %>
+    <h4><%= movie.title %></h4>
+    <p><%= movie.synopsis %></p>
+  <% end %>
+<% else %>
+  <em>Sorry, no movies found.</em>
+<% end %>

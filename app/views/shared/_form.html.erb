@@ -1,8 +1,9 @@
-<%= form_with url: movies_path, method: :get, class: "d-flex" do %>
+<%= form_with url: movies_path, method: :get, class: "d-flex", data: { search_target: "form" } do %>
   <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Find a movie/tv show"
+        placeholder: "Find a movie/tv show",
+        data: { search_target: "input", action: "keyup->search#send" }
     %>
   <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
 <% end %>
